@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import ClickedMessage from './components/ClickedMessage.vue'
+import FooterComponent from './components/FooterComponent.vue'
 </script>
 
 <template>
-  <main class="container">
-    <ClickedMessage />
-  </main>
+  <div>
+    <main class="container">
+      <ClickedMessage />
+    </main>
+    <FooterComponent />
+  </div>
 </template>
 
 <style scoped></style>

@@ -2,8 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 body {
+  margin: 0 !important;
   width: 100dvw;
   height: 100dvh;
   overflow: hidden;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
