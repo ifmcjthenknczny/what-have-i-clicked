@@ -1,39 +1,41 @@
-# what-have-i-clicked
+# WHAT HAVE I CLICKED?
 
-This template should help get you started developing with Vue 3 in Vite.
+A minimalist Vue 3 web app that visually displays the last key pressed, along with its key code. The app features a simple typewriter animation for the introductory text and a clean, modern design.
 
-## Recommended IDE Setup
+## 🚀 Live Demo
+[what-have-i-clicked.vercel.app](https://what-have-i-clicked.vercel.app)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 📌 Features
+- Displays the last key pressed and its key code
+- Typewriter animation for the intro message
+- Minimalist and responsive design
+- Simple, easy-to-read UI
 
-## Type Support for `.vue` Imports in TS
+## 🛠 Tech Stack
+- Vue 3
+- TypeScript
+- Vite
+- Tailwind CSS
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
+## 📦 Installation & Setup
 ```sh
-npm install
+# Clone the repository
+git clone https://github.com/ifmcjthenknczny/what-have-i-clicked.git
+cd what-have-i-clicked
+
+# Install dependencies
+yarn
+
+# Start the development server
+yarn dev
 ```
 
-### Compile and Hot-Reload for Development
+## 🔮 Roadmap
+- Sliding footer for mobile
+- Keyboard navigation support for interactive elements
 
-```sh
-npm run dev
-```
+## 📜 License
+MIT License
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+## 👤 Author
+[Maciej Konieczny](https://github.com/ifmcjthenknczny/)
