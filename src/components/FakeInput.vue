@@ -29,7 +29,7 @@ const handleInput = () => {}
 </script>
 
 <style scoped>
-.visually-hidden-input {
+.visually-hidden-focusable-element {
   position: absolute;
   /* top: -9999px; */
   /* left: -9999px; */

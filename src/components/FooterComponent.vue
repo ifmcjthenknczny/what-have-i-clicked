@@ -1,11 +1,9 @@
 <template>
-  <footer
-    class="footer"
-  >
-    <p>
-      Author: Maciej Konieczny.
+  <footer class="footer">
+    <div class="footer-container">
+      <p>Author: Maciej Konieczny.</p>
       <a href="https://github.com/ifmcjthenknczny/what-have-i-clicked">Repository</a>
-    </p>
+    </div>
     <p class="caution">
       Be careful on the internet. This webpage does not save your keystrokes — but it could.
     </p>
@@ -15,6 +13,22 @@
 <style scoped>
 p {
   margin: 4px 0;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 0em;
+  }
 }
 
 .footer {
