@@ -30,10 +30,6 @@ yarn
 yarn dev
 ```
 
-## 🔮 Roadmap
-- Sliding footer for mobile
-- Keyboard navigation support for interactive elements
-
 ## 📜 License
 MIT License
 

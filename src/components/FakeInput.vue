@@ -1,25 +1,31 @@
 <template>
-  <input
-    ref="autoFocusInput"
-    type="text"
-    class="visually-hidden-input"
-    aria-hidden="true"
+  <div
+    ref="autoFocusElement"
+    class="visually-hidden-focusable-element"
+    contenteditable="true"
     tabindex="-1"
-  />
+    @focus="handleFocus"
+    @blur="handleBlur"
+    @input="handleInput"
+  ></div>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, nextTick } from 'vue';
 
-const autoFocusInput = ref<HTMLInputElement | null>(null);
+const autoFocusElement = ref<HTMLElement | null>(null);
 
 onMounted(() => {
   nextTick(() => {
-    if (autoFocusInput.value) {
-      autoFocusInput.value.focus();
+    if (autoFocusElement.value) {
+      autoFocusElement.value.focus();
     }
   });
 });
+
+const handleFocus = () => {}
+const handleBlur = () => {}
+const handleInput = () => {}
 </script>
 
 <style scoped>
@@ -33,8 +39,14 @@ onMounted(() => {
   border: 0;
   padding: 0;
   margin: 0;
+  overflow: hidden;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  white-space: nowrap;
+  line-height: 0;
 }
 </style>
