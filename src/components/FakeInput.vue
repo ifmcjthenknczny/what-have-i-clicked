@@ -31,14 +31,10 @@ const handleInput = () => {}
 <style scoped>
 .visually-hidden-focusable-element {
   position: absolute;
-  /* top: -9999px; */
-  /* left: -9999px; */
-  width: 1px;
-  height: 1px;
-  opacity: 0;
   border: 0;
   padding: 0;
   margin: 0;
+  color: white;
   overflow: hidden;
   appearance: none;
   -webkit-appearance: none;
