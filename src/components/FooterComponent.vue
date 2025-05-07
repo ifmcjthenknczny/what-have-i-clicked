@@ -1,15 +1,6 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const isHovered = ref(false)
-</script>
-
 <template>
   <footer
     class="footer"
-    @mouseenter="isHovered = true"
-    @mouseleave="isHovered = false"
-    :class="{ visible: isHovered, invisible: !isHovered }"
   >
     <p>
       Author: Maciej Konieczny.
@@ -40,14 +31,6 @@ p {
 
 .caution {
   font-size: 0.5rem;
-}
-
-.footer.invisible {
-  transform: translateY(95%);
-}
-
-.footer.visible {
-  transform: translateY(0);
 }
 
 a {
