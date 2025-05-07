@@ -4,15 +4,16 @@
       <p>Author: Maciej Konieczny.</p>
       <a href="https://github.com/ifmcjthenknczny/what-have-i-clicked">Repository</a>
     </div>
-    <p class="caution">
+    <div class="caution">
       Be careful on the internet. This webpage does not save your keystrokes — but it could.
-    </p>
+    </div>
   </footer>
 </template>
 
 <style scoped>
 p {
   margin: 4px 0;
+  display: block;
 }
 
 .footer-container {
@@ -41,10 +42,15 @@ p {
   text-align: center;
   transition: transform 0.3s ease-in-out;
   font-weight: 200;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .caution {
   font-size: 0.5rem;
+  width: 80%;
 }
 
 a {
