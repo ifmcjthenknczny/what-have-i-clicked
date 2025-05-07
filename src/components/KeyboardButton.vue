@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useMobile } from '@/composables/useMobile';
 
 const props = defineProps({
   targetInputSelector: {
@@ -22,13 +22,7 @@ const props = defineProps({
   }
 });
 
-const isMobile = ref(false);
-
-const checkIsMobile = () => {
-  if (typeof window !== 'undefined') {
-    isMobile.value = window.innerWidth <= 768;
-  }
-};
+const { isMobile } = useMobile();
 
 const focusTargetInput = () => {
   if (props.targetInputSelector) {
@@ -38,19 +32,6 @@ const focusTargetInput = () => {
     }
   }
 };
-
-onMounted(() => {
-  checkIsMobile();
-  if (typeof window !== 'undefined') {
-    window.addEventListener('resize', checkIsMobile);
-  }
-});
-
-onBeforeUnmount(() => {
-  if (typeof window !== 'undefined') {
-    window.removeEventListener('resize', checkIsMobile);
-  }
-});
 </script>
 
 <style scoped>

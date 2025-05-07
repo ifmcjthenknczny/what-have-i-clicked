@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { useMobile } from '@/composables/useMobile'
 import { pick } from '@/helpers'
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 type Key = {
   key: string | null
@@ -34,6 +35,22 @@ const handleKeyDown = (event: KeyboardEvent) => {
   typeIntroText()
 }
 
+const { isMobile } = useMobile()
+
+const fontSizeRem = computed(() => {
+  const BASE_SIZE = 12
+  const MIN_SIZE = 2
+  const REDUCTION_FACTOR = 1.1
+  const MAX_CHARS_FOR_BASE_SIZE = 4;
+  if (!keyPressed.value.key || !isMobile) {
+    return `${BASE_SIZE}rem`
+  }
+
+  const reduction = MAX_CHARS_FOR_BASE_SIZE - Math.max(MAX_CHARS_FOR_BASE_SIZE, keyPressed.value.key.length) * REDUCTION_FACTOR
+
+  return `${Math.max(12 - reduction, MIN_SIZE)}rem`
+})
+
 onMounted(() => {
   window.addEventListener('keydown', handleKeyDown)
   setTimeout(() => typeIntroText(), 500)
@@ -49,7 +66,7 @@ onUnmounted(() => {
     <p v-if="keyPressed.key" class="intro">You pressed:</p>
     <p v-else class="intro">{{ introContent }}</p>
     <div v-if="keyPressed.key">
-      <p class="key">{{ keyPressed.key }}</p>
+      <p class="key" :style="`font-size: ${fontSizeRem};`">{{ keyPressed.key }}</p>
       <p class="keyCode">(key code {{ keyPressed.keyCode }})</p>
     </div>
   </div>
@@ -64,7 +81,6 @@ onUnmounted(() => {
 }
 
 .key {
-  font-size: 12rem;
   margin-bottom: 0;
 }
 

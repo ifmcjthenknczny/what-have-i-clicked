@@ -32,7 +32,7 @@ const handleInput = () => {}
 
 <style scoped>
 .visually-hidden-focusable-element {
-  width: 100%;
+  width: 30%;
   position: absolute;
   top: 0;
   border: 0;
