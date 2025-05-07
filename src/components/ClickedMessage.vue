@@ -41,12 +41,12 @@ const fontSizeRem = computed(() => {
   const BASE_SIZE = 12
   const MIN_SIZE = 2
   const REDUCTION_FACTOR = 1.1
-  const MAX_CHARS_FOR_BASE_SIZE = 4;
+  const MAX_CHARS_FOR_BASE_SIZE = 3;
   if (!keyPressed.value.key || !isMobile) {
     return `${BASE_SIZE}rem`
   }
 
-  const reduction = MAX_CHARS_FOR_BASE_SIZE - Math.max(MAX_CHARS_FOR_BASE_SIZE, keyPressed.value.key.length) * REDUCTION_FACTOR
+  const reduction = Math.max(MAX_CHARS_FOR_BASE_SIZE, keyPressed.value.key.length) * REDUCTION_FACTOR
 
   return `${Math.max(12 - reduction, MIN_SIZE)}rem`
 })
@@ -66,7 +66,7 @@ onUnmounted(() => {
     <p v-if="keyPressed.key" class="intro">You pressed:</p>
     <p v-else class="intro">{{ introContent }}</p>
     <div v-if="keyPressed.key">
-      <p class="key" :style="`font-size: ${fontSizeRem};`">{{ keyPressed.key }}</p>
+      <div class="key" :style="`font-size: ${fontSizeRem}; margin-top: 10rem;`">{{ keyPressed.key }}</div>
       <p class="keyCode">(key code {{ keyPressed.keyCode }})</p>
     </div>
   </div>
@@ -82,6 +82,10 @@ onUnmounted(() => {
 
 .key {
   margin-bottom: 0;
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
 }
 
 .keyCode {
