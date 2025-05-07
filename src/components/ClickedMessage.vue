@@ -66,7 +66,7 @@ onUnmounted(() => {
     <p v-if="keyPressed.key" class="intro">You pressed:</p>
     <p v-else class="intro">{{ introContent }}</p>
     <div v-if="keyPressed.key">
-      <div class="key" :style="`font-size: ${fontSizeRem}; margin-top: 10rem;`">{{ keyPressed.key }}</div>
+      <div class="key" :style="`font-size: ${fontSizeRem};`">{{ keyPressed.key }}</div>
       <p class="keyCode">(key code {{ keyPressed.keyCode }})</p>
     </div>
   </div>
@@ -86,6 +86,13 @@ onUnmounted(() => {
   display: flex;
   justify-content: center;
   align-items: end;
+  margin-top: 9rem;
+}
+
+@media (max-width: 768px) {
+  .key {
+    margin-top: 5rem;
+  }
 }
 
 .keyCode {
