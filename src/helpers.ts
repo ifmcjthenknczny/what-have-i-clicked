@@ -13,3 +13,7 @@ export const pick = <T extends Record<string, any>, K extends keyof T>(
     {} as Pick<T, K>,
   )
 }
+
+export const sleep = (ms: number) => {
+  return new Promise( resolve => setTimeout(resolve, ms) );
+}

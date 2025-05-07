@@ -9,22 +9,24 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from 'vue';
 
 const autoFocusInput = ref<HTMLInputElement | null>(null);
 
 onMounted(() => {
-  if (autoFocusInput.value) {
-    autoFocusInput.value.focus();
-  }
+  nextTick(() => {
+    if (autoFocusInput.value) {
+      autoFocusInput.value.focus();
+    }
+  });
 });
 </script>
 
 <style scoped>
 .visually-hidden-input {
   position: absolute;
-  top: -9999px;
-  left: -9999px;
+  /* top: -9999px; */
+  /* left: -9999px; */
   width: 1px;
   height: 1px;
   opacity: 0;
