@@ -7,21 +7,23 @@
     @focus="handleFocus"
     @blur="handleBlur"
     @input="handleInput"
-  ></div>
+  >
+    <slot />
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted, nextTick } from 'vue'
 
-const autoFocusElement = ref<HTMLElement | null>(null);
+const autoFocusElement = ref<HTMLElement | null>(null)
 
 onMounted(() => {
   nextTick(() => {
     if (autoFocusElement.value) {
-      autoFocusElement.value.focus();
+      autoFocusElement.value.focus()
     }
-  });
-});
+  })
+})
 
 const handleFocus = () => {}
 const handleBlur = () => {}
